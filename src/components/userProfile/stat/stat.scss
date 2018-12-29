@@ -1,0 +1,36 @@
+@import 'src/common/styles/base.scss';
+
+.stats {
+    height: 50px;
+    display:flex;
+    align-items: center;
+    margin: 35px 0 22px 0;
+    color:$profile-stat-number-color;
+    font-size: 24px;
+    font-weight: normal;
+
+    .desc{
+        width:100%;
+        display: block;
+        color:$profile-stat-label-color;
+        font-size: 10px;
+    }
+
+    .stat-block {
+        width: 100px;
+        border-right: 1px solid $profile-stat-border-color;
+        text-align: center;
+    }
+
+    .stat-block:last-child {
+        border:0; 
+    }
+}
+
+@media only screen and (min-width: 600px) {
+
+    .stats {
+        display:inline-flex;
+    }
+    
+}

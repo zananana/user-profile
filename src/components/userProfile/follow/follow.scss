@@ -1,0 +1,35 @@
+@import 'src/common/styles/base.scss';
+
+.follow-btn{
+    box-sizing: border-box;
+    width:248px;
+    height:46px;
+    margin: 0 auto;
+    border:0;
+    border-radius: 100px;
+    background-color: $yellow-orange;
+    color: $white;
+    text-align: center;
+    font-size: 14px;
+    font-family: $font-stack;
+    font-weight: 600;
+    letter-spacing: 4.2px;
+    text-transform: uppercase;
+    outline: none;
+
+    &hover {
+        background-color: $orange-button-hover-bg-color;
+    }
+
+    &.followed {
+        background-color: $silver-chalice;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+
+    .follow-btn{
+        width: 134px;
+    }
+    
+}

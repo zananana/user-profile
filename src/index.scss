@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600');
+
+@import 'src/common/styles/base.scss';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-stack;
+  background: $white;
+}
+
+button, button:hover {
+  cursor: pointer;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+::placeholder {
+  color:$wild-blue-yonder;
+  opacity:1;
+}
