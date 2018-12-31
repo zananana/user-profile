@@ -17,11 +17,11 @@ describe('commentsActions tests', () => {
     beforeEach(() => {
       moxios.install();
     });
-  
+
     afterEach(() => {
       moxios.uninstall();
     });
-  
+
     it('GET_COMMENTS', () => {
         moxios.wait(() => {
             const request = moxios.requests.mostRecent();

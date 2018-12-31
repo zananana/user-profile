@@ -34,10 +34,10 @@ export class Like extends Component<ILikeProps> {
     render() { 
         return ( 
             <button 
-                className="like-btn" 
-                type="button" 
+                className='like-btn' 
+                type='button' 
                 onClick={this.onClick}>
-                    <FontAwesomeIcon style={{color:"#d3d3d3"}} size="2x" icon={this.state.isLiked? faHeart : fasHeart } />
+                    <FontAwesomeIcon style={{color:'#d3d3d3'}} size='2x' icon={this.state.isLiked? faHeart : fasHeart } />
             </button>
          );
     }

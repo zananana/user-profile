@@ -59,11 +59,11 @@ export const mockup = {
     ],
     addComment: {
         "id": 4,
-            "firstName": "Mila",
-            "lastName": "Lee",
-            "comment": "Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula.",
-            "authorId": 4,
-            "datePosed": 1546103008000,
-            "authorAvatarUrl": "/avatar.png"
+        "firstName": "Mila",
+        "lastName": "Lee",
+        "comment": "Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula.",
+        "authorId": 4,
+        "datePosed": 1546103008000,
+        "authorAvatarUrl": "/avatar.png"
     }
 }

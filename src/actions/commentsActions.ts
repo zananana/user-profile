@@ -1,5 +1,5 @@
 import IComment from '../interfaces/IComment';
-import * as axios from "axios";
+import * as axios from 'axios';
 import { GET_COMMENTS, ADD_COMMENT } from './types/types';
 
 const url: string = 'http://localhost:3000/comments.json';

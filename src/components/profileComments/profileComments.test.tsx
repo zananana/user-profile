@@ -19,11 +19,11 @@ describe("ProfileComments", () => {
     });
 
     it('includes a Comment', () => {
-        expect(profileComments.find("Comment").exists()).toBe(true);
+        expect(profileComments.find('Comment').exists()).toBe(true);
     });
 
-    describe("Add comment", () => {
-        const commentVal = "new comment";
+    describe('Add comment', () => {
+        const commentVal = 'new comment';
 
         beforeEach(() => profileComments.find('Input').simulate('change', { currentTarget: { value: commentVal } } ));
 
@@ -31,7 +31,7 @@ describe("ProfileComments", () => {
             expect(profileComments.state().comment.value).toEqual(commentVal);
         });
 
-        describe("Add comment", () => {
+        describe('Add comment', () => {
 
             beforeEach(() => profileComments.find('Input').simulate('keyUp', {
                 key: 'Enter',

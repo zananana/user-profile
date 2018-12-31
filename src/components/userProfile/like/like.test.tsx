@@ -4,7 +4,7 @@ import * as React from 'react';
 import { Like } from './like';
 import { shallow } from 'enzyme';
 
-describe("Like", () => {
+describe('Like', () => {
     const mockUpdateUser = jest.fn();
     const props = {
         user: mockup.user,

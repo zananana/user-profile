@@ -3,11 +3,11 @@ import * as React from 'react';
 import Stat from './stat';
 import { shallow } from 'enzyme';
 
-describe("Stat", () => {
+describe('Stat', () => {
 
   const props = {
     data: 222,
-    label: "label"
+    label: 'label'
   };
 
   const stat = shallow(<Stat {...props} />);
@@ -16,12 +16,12 @@ describe("Stat", () => {
     expect(stat).toMatchSnapshot();
   });
 
-  it("renders correct text", () => {
-    expect(stat.find('.desc').text()).toEqual("label");
+  it('renders correct text', () => {
+    expect(stat.find('.desc').text()).toEqual('label');
   });
 
-  it("renders correct number", () => {
-    expect(stat.find('.data').text()).toEqual("222");
+  it('renders correct number', () => {
+    expect(stat.find('.data').text()).toEqual('222');
   });
 
 });

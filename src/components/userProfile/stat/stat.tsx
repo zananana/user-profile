@@ -12,11 +12,11 @@ class Stat extends Component<IStatProps> {
     render() { 
         const { data, label } = this.props;
         return ( 
-            <div className="stat-block">
-                <div className="data">
+            <div className='stat-block'>
+                <div className='data'>
                     {data}
                 </div>
-                <span className="desc">
+                <span className='desc'>
                     {label}
                 </span>
             </div>

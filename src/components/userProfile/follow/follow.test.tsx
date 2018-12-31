@@ -4,7 +4,7 @@ import * as React from 'react';
 import { Follow } from './follow';
 import { shallow } from 'enzyme';
 
-describe("Follow", () => {
+describe('Follow', () => {
     const props = {
         user: mockup.user,
         updateUser: jest.fn()

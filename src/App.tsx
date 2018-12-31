@@ -16,18 +16,18 @@ class App extends React.Component {
 
   handleWrapperHeight(showComments) {
     if(!showComments && this.profileWrapper.current && !this.profileWrapper.current.classList.contains("wrapped") ){
-      this.profileWrapper.current.className += " wrapped";
+      this.profileWrapper.current.className += ' wrapped';
     } else if (showComments && this.profileWrapper.current) {
-      this.profileWrapper.current.classList.remove("wrapped");
+      this.profileWrapper.current.classList.remove('wrapped');
     }
   }
 
   render() {
     return (
       <Provider store={store}>
-        <div className="container">
-          <div className="profile-wrapper" ref={this.profileWrapper}>
-            <div className="blue-background" />
+        <div className='container'>
+          <div className='profile-wrapper' ref={this.profileWrapper}>
+            <div className='blue-background' />
             <UserProfile />
             <ProfileComments handleWrapperHeight = {this.handleWrapperHeight}/>
           </div>

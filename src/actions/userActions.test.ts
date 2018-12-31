@@ -30,7 +30,7 @@ describe('userActions tests', () => {
         response: userMock,
       });
     });
-    
+
     const expectedActions = [{ type: types.GET_USER, payload: userMock }];
 
     const store = mockStore({ user: {} });

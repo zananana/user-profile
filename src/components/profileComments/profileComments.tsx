@@ -19,9 +19,9 @@ export class ProfileComments extends Component<IProfileCommentsProps> {
     state = {
         showComments: true,
         comment: {
-            value: ""
+            value: ''
         },
-        error: ""
+        error: ''
     }
 
     private commentsEnd: React.RefObject<HTMLInputElement> = createRef();
@@ -54,14 +54,14 @@ export class ProfileComments extends Component<IProfileCommentsProps> {
         // keycode 13 is the enter/return key
         if (e.which === 13 && e.currentTarget.value.trim().length) {
             const comment = { ...this.state.comment };
-            comment.value = ""
+            comment.value = '';
             let error = this.state.error;
-            error = ""
+            error = '';
             this.setState({ comment, error });
             this.addComment(e.currentTarget.value.trim());
         } else if (e.which === 13 && !e.currentTarget.value.trim().length) {
             let error = this.state.error;
-            error = "The comment cannot be an empty string."
+            error = 'The comment cannot be an empty string.';
             this.setState({ error });
         }
     }
@@ -73,23 +73,21 @@ export class ProfileComments extends Component<IProfileCommentsProps> {
         
         const newComment: IComment = {
             id: randomId,
-            firstName: "Agnieszka",
-            lastName: "Ziaja",
+            firstName: 'Agnieszka',
+            lastName: 'Ziaja',
             comment: value,
             authorId: 4,
             datePosed: date,
-            authorAvatarUrl: "http://localhost:3000/avatar.png"
+            authorAvatarUrl: 'http://localhost:3000/avatar.png'
         }
 
         this.props.addComments(newComment);
     }
 
-
-
-    renderInput(value, placeholder, autoComplete = "off", type = "text") {
+    renderInput(value, placeholder, autoComplete = 'off', type = 'text') {
         return (
             <Input 
-                className="add-comment-input"
+                className='add-comment-input'
                 type={type}
                 placeholder={placeholder}
                 value={value}
@@ -102,19 +100,19 @@ export class ProfileComments extends Component<IProfileCommentsProps> {
 
     scrollToBottom = () => {
         if(this.commentsEnd.current){
-            this.commentsEnd.current.scrollIntoView({ behavior: "smooth" });
+            this.commentsEnd.current.scrollIntoView({ behavior: 'smooth' });
         }
       }
 
     render() { 
-        let commentsClassNames = "comments"
-        commentsClassNames = this.state.showComments ? commentsClassNames += " show" : commentsClassNames;
+        let commentsClassNames = 'comments'
+        commentsClassNames = this.state.showComments ? commentsClassNames += ' show' : commentsClassNames;
 
          return ( 
-            <div className="wrapper" id="profileComments">   
+            <div className='wrapper' id='profileComments'>   
                 <button 
-                    type="button" 
-                    className="hide-comments-btn" 
+                    type='button' 
+                    className='hide-comments-btn' 
                     onClick={this.onClick}>
                     Hide comments ({this.props.comments.length})
                 </button>
@@ -129,13 +127,13 @@ export class ProfileComments extends Component<IProfileCommentsProps> {
                             data={comment}
                         />
                     ) )}
-                    <div style={{ float:"left", clear: "both" }}
+                    <div style={{ float:'left', clear: 'both' }}
                         ref={this.commentsEnd} />
                 </div>
-                <div className="add-comment-row">
-                    {this.renderInput(this.state.comment.value, "Add a comment...")}
+                <div className='add-comment-row'>
+                    {this.renderInput(this.state.comment.value, 'Add a comment...')}
                 </div>
-                {this.state.error && <div className="add-comment-row-error">{this.state.error}</div>}
+                {this.state.error && <div className='add-comment-row-error'>{this.state.error}</div>}
             </div>
          );
     }

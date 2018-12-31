@@ -29,13 +29,13 @@ export class Follow extends Component<IFollowProps> {
     }
 
     render() { 
-        let className = "follow-btn";
+        let className = 'follow-btn';
         if(this.state.isFollowed) {
-            className += " followed";
+            className += ' followed';
         }
         return ( 
-            <button  className={className} type="button" onClick={this.onClick}>
-            {this.state.isFollowed ? "Followed" : "Follow"}</button>
+            <button  className={className} type='button' onClick={this.onClick}>
+            {this.state.isFollowed ? 'Followed' : 'Follow'}</button>
          );
     }
 }

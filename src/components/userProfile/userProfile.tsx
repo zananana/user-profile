@@ -39,20 +39,20 @@ export class UserProfile extends Component<IProps> {
 
         return (
             <React.Fragment>
-                <div className="wrapper" id="userProfile">   
+                <div className='wrapper' id='userProfile'>   
                     <Modal data={profileUser} />
-                    <div className="avatar" style={styles.avatar}>&nbsp;</div>
-                    <div className="name">
+                    <div className='avatar' style={styles.avatar}>&nbsp;</div>
+                    <div className='name'>
                         {firstName} {lastName} 
                         <Like />
                     </div>
-                    <div className="location">
+                    <div className='location'>
                         {city}, {country}
                     </div>
-                    <div className="stats">
-                        {this.renderStat(likesNum, "Likes")}
-                        {this.renderStat(followers, "Following")}
-                        {this.renderStat(following, "Followers")}
+                    <div className='stats'>
+                        {this.renderStat(likesNum, 'Likes')}
+                        {this.renderStat(followers, 'Following')}
+                        {this.renderStat(following, 'Followers')}
                     </div>
                     <Follow />
                 </div>
