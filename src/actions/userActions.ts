@@ -7,8 +7,8 @@ const url: string = 'http://localhost:3000/user.json';
 // const url: string = 'http://xxx.ngrok.io/user.json';
 
 export const getUser = () => dispatch => {
-    axios.default.get(url)
-    .then( response =>
+    return axios.default.get(url)
+    .then(response => 
         dispatch({
             type: GET_USER,
             payload: response.data

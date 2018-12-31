@@ -13,17 +13,21 @@ interface ILikeProps {
     updateUser: (user: IUser) => void;
 }
 
-class Like extends Component<ILikeProps> {
+export class Like extends Component<ILikeProps> {
     state = { 
         isLiked: false
      }
 
      onClick = () => {
-        const originalState = this.state.isLiked;
         const isLiked = !this.state.isLiked;
         this.setState({isLiked});
-        const user = this.props.user;
-        !originalState ? user.likesNum++ : user.likesNum--;
+
+        this.updateUser();
+    }
+
+    updateUser = () => {
+        const { user } = this.props;
+        !this.state.isLiked ? user.likesNum++ : user.likesNum--;
         this.props.updateUser(user);
     }
 

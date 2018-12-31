@@ -1,5 +1,9 @@
+import { mockup } from 'src/setupTests';
 import userReducer from './userReducer';
 import { GET_USER, UPDATE_USER } from '../actions/types/types';
+
+const userMock = mockup.user;
+const updatedUserMock = mockup.userUpdate;
 
 test('userReducer', () => {
     let state;
@@ -24,18 +28,7 @@ test('userReducer', () => {
     };
     const getUserAction = {
         type: GET_USER,
-        payload: {
-            id: 1,
-            firstName: 'Harvey',
-            lastName: 'Specter',
-            likesNum: 121,
-            following: 4433,
-            followers: 723,
-            city: 'New York',
-            country: 'USA',
-            avatarUrl: '/avatar.png',
-            profileUser: 'http://website.com/profile/HarveySpecter'
-        }
+        payload: userMock
     };
     const expectedStateUser = {
         user: getUserAction.payload
@@ -51,33 +44,11 @@ test('userReducer', () => {
 
     // Assign
     const userStateBeforeUpdate = {
-        user: {
-            id: 1,
-            firstName: 'Harvey',
-            lastName: 'Specter',
-            likesNum: 121,
-            following: 4433,
-            followers: 723,
-            city: 'New York',
-            country: 'USA',
-            avatarUrl: '/avatar.png',
-            profileUser: 'http://website.com/profile/HarveySpecter'
-        }
+        user: userMock
     };
     const updateUserAction = {
         type: UPDATE_USER,
-        payload: {
-            id: 1,
-            firstName: 'Harvey',
-            lastName: 'Specter',
-            likesNum: 122,
-            following: 4433,
-            followers: 723,
-            city: 'New York',
-            country: 'USA',
-            avatarUrl: '/avatar.png',
-            profileUser: 'http://website.com/profile/HarveySpecter'
-        }
+        payload: updatedUserMock
     };
 
     const oldState = Object.assign({}, userStateBeforeUpdate);

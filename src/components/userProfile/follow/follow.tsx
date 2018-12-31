@@ -5,23 +5,26 @@ import {updateUser} from 'src/actions/userActions';
 import IUser from 'src/interfaces/IUser';
 import './follow.scss';
 
-interface IFollowProps {
+export interface IFollowProps {
     user: IUser;
     updateUser: (user: IUser) => void;
 }
 
-class Follow extends Component<IFollowProps> {
+export class Follow extends Component<IFollowProps> {
     state = { 
         isFollowed: false
      }
 
-     onClick = (e) => {
-        const originalState = this.state.isFollowed;
+     onClick = () => {
         const isFollowed = !this.state.isFollowed;
         this.setState({isFollowed});
-        e.stopPropagation();
-        const user = this.props.user;
-        !originalState ? user.following++ : user.following--;
+
+        this.updateUser();
+    }
+
+    updateUser = () => {
+        const { user } = this.props;
+        !this.state.isFollowed ? user.following++ : user.following--;
         this.props.updateUser(user);
     }
 

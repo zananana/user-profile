@@ -13,7 +13,9 @@ class Stat extends Component<IStatProps> {
         const { data, label } = this.props;
         return ( 
             <div className="stat-block">
-                {data}
+                <div className="data">
+                    {data}
+                </div>
                 <span className="desc">
                     {label}
                 </span>

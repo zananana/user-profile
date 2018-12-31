@@ -14,7 +14,7 @@ interface IProfileCommentsProps {
     handleWrapperHeight:any;
 }
 
-class ProfileComments extends Component<IProfileCommentsProps> {
+export class ProfileComments extends Component<IProfileCommentsProps> {
 
     state = {
         showComments: true,
@@ -50,34 +50,38 @@ class ProfileComments extends Component<IProfileCommentsProps> {
         this.setState({ comment });
     }
 
-    onEnter = (e):void => {
+    onEnter = (e): void => {
         // keycode 13 is the enter/return key
         if (e.which === 13 && e.currentTarget.value.trim().length) {
-            const randomId: number = Math.random();
-            let date: any = new Date();
-            date = date.getTime();
-            
-            const newComment: IComment = {
-                id: randomId,
-                firstName: "Agnieszka",
-                lastName: "Ziaja",
-                comment: e.currentTarget.value,
-                authorId: 4,
-                datePosed: date,
-                authorAvatarUrl: "http://localhost:3000/avatar.png"
-            }
-
-            this.props.addComments(newComment);
             const comment = { ...this.state.comment };
             comment.value = ""
             let error = this.state.error;
             error = ""
             this.setState({ comment, error });
+            this.addComment(e.currentTarget.value.trim());
         } else if (e.which === 13 && !e.currentTarget.value.trim().length) {
             let error = this.state.error;
             error = "The comment cannot be an empty string."
             this.setState({ error });
         }
+    }
+
+    addComment = (value) => {
+        const randomId: number = Math.random();
+        let date: any = new Date();
+        date = date.getTime();
+        
+        const newComment: IComment = {
+            id: randomId,
+            firstName: "Agnieszka",
+            lastName: "Ziaja",
+            comment: value,
+            authorId: 4,
+            datePosed: date,
+            authorAvatarUrl: "http://localhost:3000/avatar.png"
+        }
+
+        this.props.addComments(newComment);
     }
 
 

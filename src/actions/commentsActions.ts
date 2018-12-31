@@ -8,7 +8,7 @@ const url: string = 'http://localhost:3000/comments.json';
 
 export const getComments = () => dispatch => {
 
-    axios.default.get(url)
+    return axios.default.get(url)
     .then( response =>
         dispatch({
             type: GET_COMMENTS,

@@ -14,7 +14,7 @@ interface IProps {
     getUser: () => void;
 }
 
-class UserProfile extends Component<IProps> {
+export class UserProfile extends Component<IProps> {
 
     componentDidMount() {
         this.props.getUser();

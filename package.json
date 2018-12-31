@@ -83,6 +83,8 @@
     "@types/react": "^16.7.17",
     "@types/react-dom": "^16.0.11",
     "jest-webpack-resolver": "^0.3.0",
+    "moxios": "^0.4.0",
+    "redux-mock-store": "^1.5.3",
     "typescript": "^3.2.2"
   },
   "browserslist": [
