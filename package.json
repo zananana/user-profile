@@ -97,7 +97,8 @@
     "resolver": "jest-webpack-resolver",
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
-      "!**/*.d.ts"
+      "!**/*.d.ts",
+      "!src/index.tsx"
     ],
     "setupFiles": [
       "react-app-polyfill/jsdom"

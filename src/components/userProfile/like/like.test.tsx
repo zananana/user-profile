@@ -26,7 +26,7 @@ describe('Like', () => {
             });
 
             it('dispatch the updateUser action', () => {
-                expect(mockUpdateUser).toHaveBeenCalled();
+                expect(mockUpdateUser).toHaveBeenCalledWith(mockup.user);
             });
 
     });

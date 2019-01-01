@@ -13,7 +13,7 @@ describe('Follow', () => {
     
     it('renders properly', () => {
         expect(follow).toMatchSnapshot();
-      });
+    });
 
     describe('when user clicks the follor button', () => {
         const expected = !follow.state().isFollowed;
@@ -25,7 +25,7 @@ describe('Follow', () => {
             });
 
             it('dispatch the updateUser action', () => {
-                expect(props.updateUser).toHaveBeenCalled();
+                expect(props.updateUser).toHaveBeenCalledWith(mockup.user);
             });
 
     });

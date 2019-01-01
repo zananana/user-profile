@@ -10,7 +10,7 @@ describe("ProfileComments", () => {
         comments: mockup.comments,
         getComments: jest.fn(),
         addComments: mockAddComment,
-        handleWrapperHeight: ""
+        handleWrapperHeight: jest.fn()
     };
     const profileComments = shallow(<ProfileComments {...props}/>);
 
@@ -44,8 +44,38 @@ describe("ProfileComments", () => {
                 expect(mockAddComment).toHaveBeenCalled();
             });
 
+            it('expects error state to be empty', () => {
+                expect(profileComments.state().error).toBeFalsy();
+            });
+
         });
 
-    })
+        describe('Add an empty comment', () => {
+
+            beforeEach(() => profileComments.find('Input').simulate('keyUp', {
+                key: 'Enter',
+                keyCode: 13,
+                which: 13,
+                currentTarget: { value: " " }
+            }));
+
+            it('updates the error state', () => {
+                expect(profileComments.state().error).toBeTruthy();
+            });
+
+        });
+
+    });
+
+    describe('Hide comments', () => {
+        const expected = !profileComments.state().showComments;
+
+        beforeEach(() => profileComments.find('.hide-comments-btn').simulate('click'));
+
+        it('updates the showComments state', () => {
+            expect(profileComments.state().showComments).toEqual(expected);
+        });
+
+    });
 
 });

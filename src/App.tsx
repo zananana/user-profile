@@ -1,20 +1,16 @@
 import * as React from 'react';
+import { Component, createRef } from 'react';
 import { Provider } from 'react-redux';
 import store from './store';
 import UserProfile from './components/userProfile/userProfile';
 import ProfileComments from './components/profileComments/profileComments';
 import './App.scss';
 
-class App extends React.Component {
+class App extends Component {
+  
+  private profileWrapper: React.RefObject<HTMLInputElement> = createRef();
 
-  private profileWrapper: React.RefObject<HTMLInputElement> = React.createRef();
-
-  constructor(props) {
-    super(props)
-    this.handleWrapperHeight = this.handleWrapperHeight.bind(this);
-  }
-
-  handleWrapperHeight(showComments) {
+  handleWrapperHeight = (showComments) => {
     if(!showComments && this.profileWrapper.current && !this.profileWrapper.current.classList.contains("wrapped") ){
       this.profileWrapper.current.className += ' wrapped';
     } else if (showComments && this.profileWrapper.current) {

@@ -18,7 +18,7 @@ class Input extends Component<IInputProps> {
         return ( 
             <input 
                 className={className}
-                type={type}
+                type={type} 
                 placeholder={placeholder}
                 value={value}
                 onChange={onChange}

@@ -17,4 +17,5 @@ describe('App', () => {
   it('includes a connected ProfileComments', () => {
     expect(app.find('Connect(ProfileComments)').exists()).toBe(true);
   });
+
 })

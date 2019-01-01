@@ -37,11 +37,10 @@ export class ProfileComments extends Component<IProfileCommentsProps> {
         }
     }
 
-    onClick = (e) => {
+    onClick = () => {
         this.props.handleWrapperHeight(!this.state.showComments);
         const showComments = !this.state.showComments;
         this.setState({showComments});
-        e.stopPropagation();
     }
 
     onChange = (e): void => {
