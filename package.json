@@ -125,7 +125,7 @@
     },
     "globals": {
       "ts-jest": {
-        "tsConfigFile": "/Users/agus/Desktop/user-profile/tsconfig.test.json"
+        "tsConfigFile": "./tsconfig.test.json"
       }
     },
     "moduleFileExtensions": [
