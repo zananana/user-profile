@@ -1,5 +1,6 @@
+import '@babel/polyfill';
 import IUser from '../interfaces/IUser';
-import * as axios from "axios";
+import axios from "axios";
 import { GET_USER, UPDATE_USER } from './types/types';
 
 const url: string = 'http://localhost:3000/user.json';
@@ -7,7 +8,7 @@ const url: string = 'http://localhost:3000/user.json';
 // const url: string = 'http://xxx.ngrok.io/user.json';
 
 export const getUser = () => dispatch => {
-    return axios.default.get(url)
+    return axios.get(url)
     .then(response => 
         dispatch({
             type: GET_USER,
