@@ -104,16 +104,18 @@ export class ProfileComments extends Component<IProfileCommentsProps> {
       }
 
     render() { 
-        let commentsClassNames = 'comments'
+        let commentsClassNames = 'comments';
         commentsClassNames = this.state.showComments ? commentsClassNames += ' show' : commentsClassNames;
-
+        let hideCommentsText;
+        hideCommentsText = this.state.showComments ? hideCommentsText = 'Hide' : hideCommentsText = 'Show';
+        
          return ( 
             <div className='wrapper' id='profileComments'>   
                 <button 
                     type='button' 
                     className='hide-comments-btn' 
                     onClick={this.onClick}>
-                    Hide comments ({this.props.comments.length})
+                    {hideCommentsText} comments ({this.props.comments.length})
                 </button>
                 <div className={commentsClassNames}>
                     {this.props.comments
